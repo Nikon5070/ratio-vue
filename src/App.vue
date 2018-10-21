@@ -59,6 +59,7 @@ button {
   background: #ffffff;
   border: 0;
   padding: 0;
+  cursor: pointer;
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;

@@ -5,10 +5,23 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    bookmarks: [],
+    bookmarks: [
+      // {
+      //   label: 'a',
+      //   url: 'b',
+      // },
+      // {
+      //   label: 'c',
+      //   url: 'd',
+      // },
+      // {
+      //   label: 'e',
+      //   url: 'e',
+      // },
+    ],
   },
   getters: {
-    getBookmarks: state => state.bookmarks.reverse(),
+    getBookmarks: state => state.bookmarks,
     getBookmarksItem: state => index => state.bookmarks[index],
   },
   mutations: {
