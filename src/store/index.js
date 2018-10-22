@@ -5,20 +5,7 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    bookmarks: [
-      // {
-      //   label: 'a',
-      //   url: 'b',
-      // },
-      // {
-      //   label: 'c',
-      //   url: 'd',
-      // },
-      // {
-      //   label: 'e',
-      //   url: 'e',
-      // },
-    ],
+    bookmarks: [],
   },
   getters: {
     getBookmarks: state => state.bookmarks,
