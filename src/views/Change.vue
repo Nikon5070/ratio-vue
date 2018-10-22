@@ -25,9 +25,11 @@ export default {
     },
     item() {
       const itemData = this.$store.getters.getBookmarksItem(this.index);
-      this.$v.$params.item = itemData;
       return itemData;
     },
+  },
+  mounted() {
+    this.$v.$params.item = this.item;
   },
   methods: {
     updateItem() {
