@@ -8,18 +8,23 @@ const store = new Vuex.Store({
     bookmarks: [],
   },
   getters: {
-    getBookmarks: state => state.bookmarks,
-    getBookmarksItem: state => index => state.bookmarks[index],
+    getBookmarks: state => [...state.bookmarks].reverse(),
+    getBookmarksItem: state => index => [...state.bookmarks].reverse()[index],
   },
   mutations: {
     createItem(state, item) {
-      state.bookmarks.push(item);
+      state.bookmarks = [...state.bookmarks, item];
     },
     updateItem(state, index, item) {
-      state.bookmarks[index] = item;
+      // state.bookmarks[index] = item;
+      state.bookmarks = [
+        ...state.bookmarks.slice(0, index),
+        item,
+        ...state.bookmarks.slice(index + 1),
+      ];
     },
     deleteItem(state, index) {
-      state.bookmarks.splice(index, 1);
+      state.bookmarks = [...state.bookmarks.slice(0, index), ...state.bookmarks.slice(index + 1)];
     },
   },
   actions: {

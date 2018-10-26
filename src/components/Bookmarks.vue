@@ -2,7 +2,7 @@
   section.bookmarks(v-if='checkBookmarks')
     h2 Список закладок
     ul.bookmarks__list
-      BookmarksItem(v-for="(item, index) in bookmarksList"
+      BookmarksItem(v-for="(item, index) in bookmarks"
                     :key="index" v-bind:item='item' v-bind:index='index')
       Menu
   section.bookmarks(v-else)
@@ -24,10 +24,9 @@ export default {
     checkBookmarks() {
       return this.bookmarks.length > 0;
     },
-    bookmarksList() {
-      const reverse = Array.from(this.bookmarks).reverse();
-      return reverse;
-    },
+    // bookmarksList() {
+    //   return [...this.bookmarks].reverse();
+    // },
   },
   props: {
     bookmarks: Array,
